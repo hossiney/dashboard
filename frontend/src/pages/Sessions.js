@@ -44,7 +44,7 @@ const Sessions = () => {
   useEffect(() => {
     const fetchSessions = async () => {
       try {
-        const res = await axios.get('/api/sessions');
+        const res = await axios.get('/http://5.199.168.182:5000/api/sessions');
         setSessions(res.data.data);
         setFilteredSessions(res.data.data);
         
@@ -78,7 +78,7 @@ const Sessions = () => {
       }
       
       // Otherwise, apply filters through API
-      const res = await axios.post('/api/sessions/filter', filters);
+      const res = await axios.post('/http://5.199.168.182:5000/api/sessions/filter', filters);
       setFilteredSessions(res.data.data);
     } catch (err) {
       setError(err.response?.data?.message || 'خطأ في تطبيق الفلتر');

@@ -43,7 +43,7 @@ const Logs = () => {
   useEffect(() => {
     const fetchLogs = async () => {
       try {
-        const res = await axios.get('/api/logs');
+        const res = await axios.get('/http://5.199.168.182:5000/api/logs');
         setLogs(res.data.data);
         setFilteredLogs(res.data.data);
         
@@ -94,7 +94,7 @@ const Logs = () => {
       }
       
       // Otherwise, apply filters through API
-      const res = await axios.post('/api/logs/filter', filters);
+      const res = await axios.post('/http://5.199.168.182:5000/api/logs/filter', filters);
       setFilteredLogs(res.data.data);
       // Reset search term when applying filters
       setSearchTerm('');
