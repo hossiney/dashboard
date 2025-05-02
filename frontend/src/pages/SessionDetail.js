@@ -44,11 +44,11 @@ const SessionDetail = () => {
       try {
         setLoading(true);
         // Fetch session details
-        const sessionRes = await axios.get(`/http://5.199.168.182:5000/api/sessions/${id}`);
+        const sessionRes = await axios.get(`http://5.199.168.182:5000/api/sessions/${id}`);
         setSession(sessionRes.data.data);
 
         // Fetch session logs
-        const logsRes = await axios.get(`/http://5.199.168.182:5000/api/logs/session/${sessionRes.data.data.session_id}`);
+        const logsRes = await axios.get(`http://5.199.168.182:5000/api/logs/session/${sessionRes.data.data.session_id}`);
         setLogs(logsRes.data.data);
         
         setLoading(false);

@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
       }
 
       try {
-        const res = await axios.get('/http://5.199.168.182:5000/api/auth/me');
+        const res = await axios.get('http://5.199.168.182:5000/api/auth/me');
         
         if (res.data.success) {
           setIsAuthenticated(true);
@@ -56,7 +56,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (username, password) => {
     try {
       setError(null);
-      const res = await axios.post('/http://5.199.168.182:5000/api/auth/login', { username, password });
+      const res = await axios.post('http://5.199.168.182:5000/api/auth/login', { username, password });
       
       if (res.data.success) {
         localStorage.setItem('token', res.data.token);
@@ -86,7 +86,7 @@ export const AuthProvider = ({ children }) => {
   const changePassword = async (oldPassword, newPassword) => {
     try {
       setError(null);
-      const res = await axios.post('/http://5.199.168.182:5000/api/auth/change-password', {
+      const res = await axios.post('http://5.199.168.182:5000/api/auth/change-password', {
         oldPassword,
         newPassword
       });

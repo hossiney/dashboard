@@ -30,7 +30,7 @@ const Credentials = () => {
   useEffect(() => {
     const fetchCredentials = async () => {
       try {
-        const res = await axios.get('/http://5.199.168.182:5000/api/logs/credentials');
+        const res = await axios.get('http://5.199.168.182:5000/api/logs/credentials');
         setCredentials(res.data.data);
         setFilteredCredentials(res.data.data);
         setLoading(false);

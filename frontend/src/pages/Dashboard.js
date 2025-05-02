@@ -31,11 +31,11 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         // Fetch statistics
-        const statsRes = await axios.get('/http://5.199.168.182:5000/api/sessions/stats');
+        const statsRes = await axios.get('http://5.199.168.182:5000/api/sessions/stats');
         setStats(statsRes.data.data);
 
         // Fetch recent sessions
-        const sessionsRes = await axios.get('/http://5.199.168.182:5000/api/sessions');
+        const sessionsRes = await axios.get('http://5.199.168.182:5000/api/sessions');
         setRecentSessions(sessionsRes.data.data.slice(0, 5)); // Get latest 5 sessions
 
         setLoading(false);
